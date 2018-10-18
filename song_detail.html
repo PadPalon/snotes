@@ -3,59 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <title>Snotes</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/base-min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+          integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-<div id="details">
-    <table>
-        <tr>
-            <td>Title</td>
-            <td>Song title</td>
-        </tr>
-        <tr>
-            <td>Author</td>
-            <td>Luca Neukom</td>
-        </tr>
-        <tr>
-            <td>Genre</td>
-            <td>Atmospheric</td>
-        </tr>
-    </table>
-    <button>Save</button>
-</div>
-<div id="notes">
-    <div id="notes_search">
-        <label for="text_search">Note text</label>
-        <input id="text_search" type="text">
-        <label for="label_search">Labels</label>
-        <select id="label_search">
-            <option>First label</option>
-            <option>Second label</option>
-            <option>Third label</option>
-        </select>
-        <button>Reset</button>
+<div id="container" class="pure-g">
+    <div class="pure-u-1">
+        <h1>sNotes</h1>
     </div>
-    <table>
-        <tr>
-            <th>Timestamp</th>
-            <th>Text</th>
-            <th>Labels</th>
-        </tr>
-        <tr>
-            <td></td>
-            <td>This is a note without a timestamp</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>This is a note with labels</td>
-            <td>Several labels</td>
-        </tr>
-        <tr>
-            <td>02:12</td>
-            <td>This is a note with a timestamp</td>
-            <td></td>
-        </tr>
-    </table>
+    <div id="song-details" class="pure-u-1">
+        <h2>Details</h2>
+        <form class="pure-form pure-form-stacked">
+            <fieldset>
+                <div class="pure-control-group">
+                    <label for="song-title">Title</label>
+                    <input id="song-title" type="text" class="pure-input-1"/>
+                </div>
+                <div class="pure-control-group">
+                    <label for="song-author">Author</label>
+                    <input id="song-author" type="text" class="pure-input-1"/>
+                </div>
+                <div class="pure-control-group">
+                    <label for="song-genre">Genre</label>
+                    <input id="song-genre" type="text" class="pure-input-1"/>
+                </div>
+                <div class="pure-controls">
+                    <button class="pure-button pure-button-primary">Save</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <div id="notes-list" class="pure-u-3-5">
+        <h2>Notes</h2>
+        <table class="pure-table pure-table-horizontal">
+            <thead>
+            <tr>
+                <th>Timestamp</th>
+                <th>Text</th>
+                <th>Labels</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td></td>
+                <td>This is a note without a timestamp</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>This is a note with labels</td>
+                <td>First label, Second label, Third Label</td>
+            </tr>
+            <tr>
+                <td>02:12</td>
+                <td>This is a note with a timestamp</td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="notes-search" class="pure-u-2-5">
+        <h2>Search</h2>
+        <form class="pure-form pure-form-stacked">
+            <fieldset>
+                <input id="text-search" type="text" class="pure-input-1" placeholder="Text search">
+                <div class="pure-control-group">
+                    <h3>Labels</h3>
+                    <label for="first-label" class="pure-checkbox">
+                        <input id="first-label" type="checkbox" value="">
+                        First label
+                    </label>
+                    <label for="second-label" class="pure-checkbox">
+                        <input id="second-label" type="checkbox" value="">
+                        Second label
+                    </label>
+                    <label for="third-label" class="pure-checkbox">
+                        <input id="third-label" type="checkbox" value="">
+                        Third label
+                    </label>
+                </div>
+                <div class="pure-controls">
+                    <button class="pure-button pure-button-primary">Reset</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
 </div>
 </body>
 </html>

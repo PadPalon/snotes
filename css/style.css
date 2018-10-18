@@ -1,0 +1,16 @@
+h1 {
+    text-align: center;
+}
+
+#container {
+    width: 90%;
+    margin: auto;
+}
+
+#notes-list table {
+    width: 100%;
+}
+
+#notes-search h2, #notes-search form {
+    margin-left: 5%;
+}
