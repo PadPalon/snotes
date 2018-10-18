@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snotes</title>
+</head>
+<body>
+<div id="details">
+    <table>
+        <tr>
+            <td>Title</td>
+            <td>Song title</td>
+        </tr>
+        <tr>
+            <td>Author</td>
+            <td>Luca Neukom</td>
+        </tr>
+        <tr>
+            <td>Genre</td>
+            <td>Atmospheric</td>
+        </tr>
+    </table>
+    <button>Save</button>
+</div>
+<div id="notes">
+    <div id="notes_search">
+        <label for="text_search">Note text</label>
+        <input id="text_search" type="text">
+        <label for="label_search">Labels</label>
+        <select id="label_search">
+            <option>First label</option>
+            <option>Second label</option>
+            <option>Third label</option>
+        </select>
+        <button>Reset</button>
+    </div>
+    <table>
+        <tr>
+            <th>Timestamp</th>
+            <th>Text</th>
+            <th>Labels</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td>This is a note without a timestamp</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>This is a note with labels</td>
+            <td>Several labels</td>
+        </tr>
+        <tr>
+            <td>02:12</td>
+            <td>This is a note with a timestamp</td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
