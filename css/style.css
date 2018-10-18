@@ -11,6 +11,35 @@ h1 {
     width: 100%;
 }
 
+#time-column {
+    width: 30px;
+}
+
+#label-column {
+    width: 150px;
+}
+
+#songs-list table {
+    width: 100%;
+}
+
+#genre-column {
+    width: 150px;
+}
+
+#edit-column {
+    width: 50px;
+}
+
+#delete-column {
+    width: 50px;
+}
+
 #notes-search h2, #notes-search form {
+    margin-left: 5%;
+}
+
+#songs-label-search form {
+    margin-top: 5%;
     margin-left: 5%;
 }

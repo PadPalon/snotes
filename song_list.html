@@ -17,54 +17,24 @@
     <div class="pure-u-1">
         <h1>sNotes</h1>
     </div>
-    <div id="song-details" class="pure-u-1">
-        <h2>Details</h2>
+
+    <div id="songs-search" class="pure-u-3-5">
+        <h2>Search</h2>
         <form class="pure-form pure-form-stacked">
             <fieldset>
                 <input id="song-title" type="text" class="pure-input-1" placeholder="Title"/>
                 <input id="song-genre" type="text" class="pure-input-1" placeholder="Genre"/>
+                <input id="text-search" type="text" class="pure-input-1" placeholder="Note search">
                 <div class="pure-controls">
-                    <button class="pure-button pure-button-primary">Save</button>
+                    <button class="pure-button pure-button-primary">Reset</button>
                 </div>
             </fieldset>
         </form>
     </div>
 
-    <div id="notes-list" class="pure-u-3-5">
-        <h2>Notes</h2>
-        <table class="pure-table pure-table-horizontal">
-            <thead>
-            <tr>
-                <th id="time-column">Time</th>
-                <th id="note-column">Note</th>
-                <th id="label-column">Labels</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td></td>
-                <td>This is a note without a timestamp</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>This is a note with labels</td>
-                <td>First label, Second label, Third Label</td>
-            </tr>
-            <tr>
-                <td>02:12</td>
-                <td>This is a note with a timestamp</td>
-                <td></td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div id="notes-search" class="pure-u-2-5">
-        <h2>Search</h2>
+    <div id="songs-label-search" class="pure-u-2-5">
         <form class="pure-form pure-form-stacked">
             <fieldset>
-                <input id="text-search" type="text" class="pure-input-1" placeholder="Text search">
                 <div class="pure-control-group">
                     <h3>Labels</h3>
                     <label for="first-label" class="pure-checkbox">
@@ -80,11 +50,42 @@
                         Third label
                     </label>
                 </div>
-                <div class="pure-controls">
-                    <button class="pure-button pure-button-primary">Reset</button>
-                </div>
             </fieldset>
         </form>
+    </div>
+
+    <div id="songs-list" class="pure-u-1">
+        <h2>Songs</h2>
+        <table class="pure-table pure-table-horizontal">
+            <thead>
+            <tr>
+                <th id="title-column">Title</th>
+                <th id="genre-column">Genre</th>
+                <th id="edit-column">Edit</th>
+                <th id="delete-column">Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Song 1</td>
+                <td>Atmospheric</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Song 2</td>
+                <td>Metal</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Song 3</td>
+                <td>Electronic</td>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 </body>
