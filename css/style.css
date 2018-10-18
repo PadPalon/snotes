@@ -35,6 +35,10 @@ h1 {
     width: 50px;
 }
 
+.icon_column {
+    text-align: center;
+}
+
 #notes-search h2, #notes-search form {
     margin-left: 5%;
 }
