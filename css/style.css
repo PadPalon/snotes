@@ -9,6 +9,7 @@ h1 {
 
 .columns {
     display: flex;
+    justify-content: space-between;
 }
 
 #notes-list {
@@ -16,19 +17,19 @@ h1 {
 }
 
 #notes-search {
-    flex-basis: 30%;
+    flex-basis: 25%;
 }
 
 #songs-search {
     flex-basis: 70%;
 }
 
-#songs-label-search {
-    flex-basis: 30%;
+#songs-list table {
+    width: 100%;
 }
 
-#notes-list table {
-    width: 100%;
+#songs-label-search {
+    flex-basis: 25%;
 }
 
 #time-column {
@@ -37,10 +38,6 @@ h1 {
 
 #label-column {
     width: 150px;
-}
-
-#songs-list table {
-    width: 100%;
 }
 
 #genre-column {
@@ -61,13 +58,4 @@ h1 {
 
 .create-button {
     margin-bottom: 5px;
-}
-
-#notes-search h2, #notes-search form {
-    margin-left: 5%;
-}
-
-#songs-label-search form {
-    margin-top: 5%;
-    margin-left: 5%;
 }
