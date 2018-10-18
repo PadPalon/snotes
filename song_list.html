@@ -16,48 +16,50 @@
     <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-<div id="container" class="pure-g">
-    <div class="pure-u-1">
+<div id="container">
+    <div id="header">
         <h1>sNotes</h1>
     </div>
 
-    <div id="songs-search" class="pure-u-3-5">
-        <h2>Search</h2>
-        <form class="pure-form pure-form-stacked">
-            <fieldset>
-                <input id="song-title" type="text" class="pure-input-1" placeholder="Title"/>
-                <input id="song-genre" type="text" class="pure-input-1" placeholder="Genre"/>
-                <input id="text-search" type="text" class="pure-input-1" placeholder="Note search">
-                <div class="pure-controls">
-                    <button class="pure-button pure-button-primary">Reset</button>
-                </div>
-            </fieldset>
-        </form>
+    <div class="columns">
+        <div id="songs-search">
+            <h2>Search</h2>
+            <form class="pure-form pure-form-stacked">
+                <fieldset>
+                    <input id="song-title" type="text" class="pure-input-1" placeholder="Title"/>
+                    <input id="song-genre" type="text" class="pure-input-1" placeholder="Genre"/>
+                    <input id="text-search" type="text" class="pure-input-1" placeholder="Note search">
+                    <div class="pure-controls">
+                        <button class="pure-button pure-button-primary">Reset</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div id="songs-label-search">
+            <form class="pure-form pure-form-stacked">
+                <fieldset>
+                    <div class="pure-control-group">
+                        <h3>Labels</h3>
+                        <label for="first-label" class="pure-checkbox">
+                            <input id="first-label" type="checkbox" value="">
+                            First label
+                        </label>
+                        <label for="second-label" class="pure-checkbox">
+                            <input id="second-label" type="checkbox" value="">
+                            Second label
+                        </label>
+                        <label for="third-label" class="pure-checkbox">
+                            <input id="third-label" type="checkbox" value="">
+                            Third label
+                        </label>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
     </div>
 
-    <div id="songs-label-search" class="pure-u-2-5">
-        <form class="pure-form pure-form-stacked">
-            <fieldset>
-                <div class="pure-control-group">
-                    <h3>Labels</h3>
-                    <label for="first-label" class="pure-checkbox">
-                        <input id="first-label" type="checkbox" value="">
-                        First label
-                    </label>
-                    <label for="second-label" class="pure-checkbox">
-                        <input id="second-label" type="checkbox" value="">
-                        Second label
-                    </label>
-                    <label for="third-label" class="pure-checkbox">
-                        <input id="third-label" type="checkbox" value="">
-                        Third label
-                    </label>
-                </div>
-            </fieldset>
-        </form>
-    </div>
-
-    <div id="songs-list" class="pure-u-1">
+    <div id="songs-list">
         <h2>Songs</h2>
         <button class="create-button pure-button pure-button-primary">Create song</button>
         <table class="pure-table pure-table-horizontal">

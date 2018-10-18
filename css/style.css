@@ -7,6 +7,26 @@ h1 {
     margin: auto;
 }
 
+.columns {
+    display: flex;
+}
+
+#notes-list {
+    flex-basis: 70%;
+}
+
+#notes-search {
+    flex-basis: 30%;
+}
+
+#songs-search {
+    flex-basis: 70%;
+}
+
+#songs-label-search {
+    flex-basis: 30%;
+}
+
 #notes-list table {
     width: 100%;
 }
