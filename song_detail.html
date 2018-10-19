@@ -35,6 +35,33 @@
     </div>
 
     <div class="columns">
+        <div id="notes-search">
+            <form class="pure-form pure-form-stacked">
+                <h2>Search</h2>
+                <fieldset>
+                    <input id="text-search" type="text" class="pure-input-1" placeholder="Text search">
+                    <h3>Labels</h3>
+                    <div class="label-list pure-control-group">
+                        <label for="first-label" class="pure-checkbox">
+                            <input id="first-label" type="checkbox" value="">
+                            First label
+                        </label>
+                        <label for="second-label" class="pure-checkbox">
+                            <input id="second-label" type="checkbox" value="">
+                            Second label
+                        </label>
+                        <label for="third-label" class="pure-checkbox">
+                            <input id="third-label" type="checkbox" value="">
+                            Third label
+                        </label>
+                    </div>
+                    <div class="pure-controls">
+                        <button class="pure-button pure-button-primary">Reset</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
         <div id="notes-list">
             <h2>Notes</h2>
             <button class="create-button pure-button pure-button-primary">Create note</button>
@@ -68,33 +95,6 @@
                 </tr>
                 </tbody>
             </table>
-        </div>
-
-        <div id="notes-search">
-            <h2>Search</h2>
-            <form class="pure-form pure-form-stacked">
-                <fieldset>
-                    <input id="text-search" type="text" class="pure-input-1" placeholder="Text search">
-                    <div class="pure-control-group">
-                        <h3>Labels</h3>
-                        <label for="first-label" class="pure-checkbox">
-                            <input id="first-label" type="checkbox" value="">
-                            First label
-                        </label>
-                        <label for="second-label" class="pure-checkbox">
-                            <input id="second-label" type="checkbox" value="">
-                            Second label
-                        </label>
-                        <label for="third-label" class="pure-checkbox">
-                            <input id="third-label" type="checkbox" value="">
-                            Third label
-                        </label>
-                    </div>
-                    <div class="pure-controls">
-                        <button class="pure-button pure-button-primary">Reset</button>
-                    </div>
-                </fieldset>
-            </form>
         </div>
     </div>
 </div>

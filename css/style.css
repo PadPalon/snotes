@@ -7,29 +7,44 @@ h1 {
     margin: auto;
 }
 
-.columns {
-    display: flex;
-    justify-content: space-between;
+@media (min-width: 600px) {
+    .columns {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #notes-list {
+        flex-basis: 70%;
+        order: 1;
+    }
+
+    #notes-search {
+        flex-basis: 25%;
+        order: 2;
+    }
+
+    #songs-search {
+        flex-basis: 70%;
+    }
+
+    #songs-label-search {
+        flex-basis: 25%;
+    }
 }
 
-#notes-list {
-    flex-basis: 70%;
-}
+@media (max-width: 600px) {
+    .label-list {
+        display: flex;
+        flex-flow: row wrap;
+    }
 
-#notes-search {
-    flex-basis: 25%;
-}
-
-#songs-search {
-    flex-basis: 70%;
+    .label-list label {
+        padding-right: 15px;
+    }
 }
 
 #songs-list table {
     width: 100%;
-}
-
-#songs-label-search {
-    flex-basis: 25%;
 }
 
 #time-column {
