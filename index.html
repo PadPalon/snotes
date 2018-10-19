@@ -13,28 +13,17 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
           integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
-
-    <script src="src/detail.js"></script>
-    <script src="src/list.js"></script>
-
-    <script>
-        $(function() {
-            $("#detail").hide();
-        })
-    </script>
+    <script src="https://unpkg.com/vue"></script>
 
     <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-<div id="container">
+<div id="vue-container">
     <div id="header">
         <h1>sNotes</h1>
     </div>
 
-    <div id="list">
+    <div id="list" v-if="list">
         <div class="columns">
             <div id="songs-search">
                 <h2>Search</h2>
@@ -43,11 +32,11 @@
                         <input id="song-title-search" type="text" class="pure-input-1" placeholder="Title"/>
                         <input id="song-genre-search" type="text" class="pure-input-1" placeholder="Genre"/>
                         <input id="song-note-text-search" type="text" class="pure-input-1" placeholder="Note search">
-                        <div class="pure-controls">
-                            <button class="pure-button pure-button-primary">Reset</button>
-                        </div>
                     </fieldset>
                 </form>
+                <div class="pure-controls">
+                    <button class="pure-button pure-button-primary">Reset</button>
+                </div>
             </div>
 
             <div id="songs-label-search">
@@ -63,7 +52,7 @@
 
         <div id="songs-list">
             <h2>Songs</h2>
-            <button class="create-button pure-button pure-button-primary">Create song</button>
+            <button v-on:click="list = false" class="create-button pure-button pure-button-primary">Create song</button>
             <table class="pure-table pure-table-horizontal">
                 <thead>
                 <tr>
@@ -74,23 +63,30 @@
                 </tr>
                 </thead>
                 <tbody>
+                <tr v-for="(song, index) in songs">
+                    <td>{{ song.title }}</td>
+                    <td>{{ song.genre }}</td>
+                    <td class="icon_column"><i class="fas fa-pencil-alt"></i></td>
+                    <td class="icon_column"><i class="fas fa-trash-alt"></i></td>
+                </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <div id="detail">
+    <div id="detail" v-else>
         <div id="song-details">
             <h2>Details</h2>
             <form class="pure-form pure-form-stacked">
                 <fieldset>
                     <input id="song-title-detail" type="text" class="pure-input-1" placeholder="Title"/>
                     <input id="song-genre-detail" type="text" class="pure-input-1" placeholder="Genre"/>
-                    <div class="pure-controls">
-                        <button class="pure-button pure-button-primary">Save</button>
-                    </div>
                 </fieldset>
             </form>
+            <div class="pure-controls">
+                <button v-on:click="createSong()" class="pure-button pure-button-primary">Save</button>
+                <button v-on:click="list = true" class="pure-button pure-button-primary">Return to list</button>
+            </div>
         </div>
 
         <div class="columns">
@@ -111,7 +107,7 @@
 
             <div id="notes-list">
                 <h2>Notes</h2>
-                <button class="create-button pure-button pure-button-primary">Create note</button>
+                <button v-on:click="createNote" class="create-button pure-button pure-button-primary">Create note</button>
                 <table class="pure-table pure-table-horizontal">
                     <thead>
                     <tr>
@@ -122,6 +118,12 @@
                     </tr>
                     </thead>
                     <tbody>
+                    <tr v-for="(note, index) in notes">
+                        <td>{{ note.timestamp }}</td>
+                        <td>{{ note.text }}</td>
+                        <td>{{ note.labels }}</td>
+                        <td class="icon_column"><i v-on:click="deleteNote(index)" class="fas fa-trash-alt"></i></td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -129,4 +131,5 @@
     </div>
 </div>
 </body>
+<script src="src/app.js"></script>
 </html>
