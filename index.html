@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
           integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
-    <script src="https://unpkg.com/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
 
     <link rel="stylesheet" href="css/style.css"/>
 </head>
@@ -52,7 +52,7 @@
 
         <div id="songs-list">
             <h2>Songs</h2>
-            <button v-on:click="list = false" class="create-button pure-button pure-button-primary">Create song</button>
+            <button v-on:click="newSong" class="create-button pure-button pure-button-primary">Create song</button>
             <table class="pure-table pure-table-horizontal">
                 <thead>
                 <tr>
@@ -63,11 +63,11 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr v-for="(song, index) in songs">
+                <tr v-for="song in songs">
                     <td>{{ song.title }}</td>
                     <td>{{ song.genre }}</td>
-                    <td class="icon_column"><i class="fas fa-pencil-alt"></i></td>
-                    <td class="icon_column"><i class="fas fa-trash-alt"></i></td>
+                    <td class="icon_column"><i v-on:click="editSong(song)" class="fas fa-pencil-alt"></i></td>
+                    <td class="icon_column"><i v-on:click="$emit('song-removed', song)" class="fas fa-trash-alt"></i></td>
                 </tr>
                 </tbody>
             </table>
@@ -79,12 +79,12 @@
             <h2>Details</h2>
             <form class="pure-form pure-form-stacked">
                 <fieldset>
-                    <input id="song-title-detail" type="text" class="pure-input-1" placeholder="Title"/>
-                    <input id="song-genre-detail" type="text" class="pure-input-1" placeholder="Genre"/>
+                    <input id="song-title-detail" type="text" class="pure-input-1" placeholder="Title" v-model="currentSong.title"/>
+                    <input id="song-genre-detail" type="text" class="pure-input-1" placeholder="Genre" v-model="currentSong.genre"/>
                 </fieldset>
             </form>
             <div class="pure-controls">
-                <button v-on:click="createSong()" class="pure-button pure-button-primary">Save</button>
+                <button v-on:click="saveSong" class="pure-button pure-button-primary">Save</button>
                 <button v-on:click="list = true" class="pure-button pure-button-primary">Return to list</button>
             </div>
         </div>
@@ -118,12 +118,13 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr v-for="(note, index) in notes">
-                        <td>{{ note.timestamp }}</td>
-                        <td>{{ note.text }}</td>
-                        <td>{{ note.labels }}</td>
-                        <td class="icon_column"><i v-on:click="deleteNote(index)" class="fas fa-trash-alt"></i></td>
-                    </tr>
+                    <template>
+                        <note-row v-for="note in notes"
+                                  :key="note.id"
+                                  :note="note"
+                        >
+                        </note-row>
+                    </template>
                     </tbody>
                 </table>
             </div>
