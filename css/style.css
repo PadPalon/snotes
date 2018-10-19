@@ -47,23 +47,27 @@ h1 {
     width: 100%;
 }
 
-#time-column {
+#notes-list table {
+    width: 100%;
+}
+
+.time-column {
     width: 30px;
 }
 
-#label-column {
+.label-column {
     width: 150px;
 }
 
-#genre-column {
+.genre-column {
     width: 150px;
 }
 
-#edit-column {
+.edit-column {
     width: 50px;
 }
 
-#delete-column {
+.delete-column {
     width: 50px;
 }
 

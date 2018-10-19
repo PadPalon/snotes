@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sNotes</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/base-min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+          integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+
+    <script src="src/detail.js"></script>
+    <script src="src/list.js"></script>
+
+    <script>
+        $(function() {
+            $("#detail").hide();
+        })
+    </script>
+
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <h1>sNotes</h1>
+    </div>
+
+    <div id="list">
+        <div class="columns">
+            <div id="songs-search">
+                <h2>Search</h2>
+                <form class="pure-form pure-form-stacked">
+                    <fieldset>
+                        <input id="song-title-search" type="text" class="pure-input-1" placeholder="Title"/>
+                        <input id="song-genre-search" type="text" class="pure-input-1" placeholder="Genre"/>
+                        <input id="song-note-text-search" type="text" class="pure-input-1" placeholder="Note search">
+                        <div class="pure-controls">
+                            <button class="pure-button pure-button-primary">Reset</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div id="songs-label-search">
+                <h3>Labels</h3>
+                <form class="pure-form pure-form-stacked">
+                    <fieldset>
+                        <div class="label-list pure-control-group">
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+        <div id="songs-list">
+            <h2>Songs</h2>
+            <button class="create-button pure-button pure-button-primary">Create song</button>
+            <table class="pure-table pure-table-horizontal">
+                <thead>
+                <tr>
+                    <th class="title-column">Title</th>
+                    <th class="genre-column">Genre</th>
+                    <th class="edit-column">Edit</th>
+                    <th class="delete-column">Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="detail">
+        <div id="song-details">
+            <h2>Details</h2>
+            <form class="pure-form pure-form-stacked">
+                <fieldset>
+                    <input id="song-title-detail" type="text" class="pure-input-1" placeholder="Title"/>
+                    <input id="song-genre-detail" type="text" class="pure-input-1" placeholder="Genre"/>
+                    <div class="pure-controls">
+                        <button class="pure-button pure-button-primary">Save</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="columns">
+            <div id="notes-search">
+                <form class="pure-form pure-form-stacked">
+                    <h2>Search</h2>
+                    <fieldset>
+                        <input id="note-text-search" type="text" class="pure-input-1" placeholder="Text search">
+                        <div class="pure-controls">
+                            <button class="pure-button pure-button-primary">Reset</button>
+                        </div>
+                        <h3>Labels</h3>
+                        <div class="label-list pure-control-group">
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div id="notes-list">
+                <h2>Notes</h2>
+                <button class="create-button pure-button pure-button-primary">Create note</button>
+                <table class="pure-table pure-table-horizontal">
+                    <thead>
+                    <tr>
+                        <th class="time-column">Time</th>
+                        <th class="note-column">Note</th>
+                        <th class="label-column">Labels</th>
+                        <th class="delete-column">Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
