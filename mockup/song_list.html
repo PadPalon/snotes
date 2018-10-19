@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
           integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="../css/style.css"/>
 </head>
 <body>
 <div id="container">
@@ -26,9 +26,9 @@
             <h2>Search</h2>
             <form class="pure-form pure-form-stacked">
                 <fieldset>
-                    <input id="song-title" type="text" class="pure-input-1" placeholder="Title"/>
-                    <input id="song-genre" type="text" class="pure-input-1" placeholder="Genre"/>
-                    <input id="text-search" type="text" class="pure-input-1" placeholder="Note search">
+                    <input id="song-title-search" type="text" class="pure-input-1" placeholder="Title"/>
+                    <input id="song-genre-search" type="text" class="pure-input-1" placeholder="Genre"/>
+                    <input id="song-note-text-search" type="text" class="pure-input-1" placeholder="Note search">
                     <div class="pure-controls">
                         <button class="pure-button pure-button-primary">Reset</button>
                     </div>
@@ -65,10 +65,10 @@
         <table class="pure-table pure-table-horizontal">
             <thead>
             <tr>
-                <th id="title-column">Title</th>
-                <th id="genre-column">Genre</th>
-                <th id="edit-column">Edit</th>
-                <th id="delete-column">Delete</th>
+                <th class="title-column">Title</th>
+                <th class="genre-column">Genre</th>
+                <th class="edit-column">Edit</th>
+                <th class="delete-column">Delete</th>
             </tr>
             </thead>
             <tbody>

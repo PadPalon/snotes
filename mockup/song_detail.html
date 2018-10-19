@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
           integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="../css/style.css"/>
 </head>
 <body>
 <div id="container">
@@ -25,8 +25,8 @@
         <h2>Details</h2>
         <form class="pure-form pure-form-stacked">
             <fieldset>
-                <input id="song-title" type="text" class="pure-input-1" placeholder="Title"/>
-                <input id="song-genre" type="text" class="pure-input-1" placeholder="Genre"/>
+                <input id="song-title-detail" type="text" class="pure-input-1" placeholder="Title"/>
+                <input id="song-genre-detail" type="text" class="pure-input-1" placeholder="Genre"/>
                 <div class="pure-controls">
                     <button class="pure-button pure-button-primary">Save</button>
                 </div>
@@ -39,7 +39,10 @@
             <form class="pure-form pure-form-stacked">
                 <h2>Search</h2>
                 <fieldset>
-                    <input id="text-search" type="text" class="pure-input-1" placeholder="Text search">
+                    <input id="note-text-search" type="text" class="pure-input-1" placeholder="Text search">
+                    <div class="pure-controls">
+                        <button class="pure-button pure-button-primary">Reset</button>
+                    </div>
                     <h3>Labels</h3>
                     <div class="label-list pure-control-group">
                         <label for="first-label" class="pure-checkbox">
@@ -55,9 +58,6 @@
                             Third label
                         </label>
                     </div>
-                    <div class="pure-controls">
-                        <button class="pure-button pure-button-primary">Reset</button>
-                    </div>
                 </fieldset>
             </form>
         </div>
@@ -68,10 +68,10 @@
             <table class="pure-table pure-table-horizontal">
                 <thead>
                 <tr>
-                    <th id="time-column">Time</th>
-                    <th id="note-column">Note</th>
-                    <th id="label-column">Labels</th>
-                    <th id="delete-column">Delete</th>
+                    <th class="time-column">Time</th>
+                    <th class="note-column">Note</th>
+                    <th class="label-column">Labels</th>
+                    <th class="delete-column">Delete</th>
                 </tr>
                 </thead>
                 <tbody>
