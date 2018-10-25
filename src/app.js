@@ -49,6 +49,10 @@ let app = new Vue({
             this.list = false;
             this.currentSong = song;
         },
+        toList: function (song) {
+            this.list = true;
+            this.currentSong = null;
+        },
         createNote: function () {
             this.currentSong.notes.push({
                 id: this.currentSong.noteCount,
