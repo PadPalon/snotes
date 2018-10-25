@@ -9,30 +9,40 @@ let noteRow = {
         </tr>`
 };
 
+class Song {
+    constructor() {
+        this.id = 0;
+        this.title = "";
+        this.genre = "";
+        this.notes = [];
+    }
+
+    createNote() {
+        this.notes.push(new Note(this));
+    }
+}
+
+class Note {
+    constructor(song) {
+        this.id = song.notes.length + 1;
+        this.timestamp = "";
+        this.text = "";
+        this.labels = "";
+    }
+}
+
 let app = new Vue({
     el: '#vue-container',
     data: {
         songs: [],
-        currentSong: {
-            id: 0,
-            title: "",
-            genre: "",
-            notes: [],
-            noteCount: 1
-        },
+        currentSong: null,
         songCount: 1,
         list: true
     },
     methods: {
         newSong: function() {
             this.list = false;
-            this.currentSong = {
-                id: 0,
-                title: "",
-                genre: "",
-                notes: [],
-                noteCount: 1
-            }
+            this.currentSong = new Song();
         },
         saveSong: function () {
             if(this.currentSong.id === 0) {
@@ -54,14 +64,8 @@ let app = new Vue({
             this.currentSong = null;
         },
         createNote: function () {
-            this.currentSong.notes.push({
-                id: this.currentSong.noteCount,
-                timestamp: "",
-                text: "",
-                labels: "",
-                notes: []
-            });
-            this.currentSong.noteCount++;
+            this.saveSong();
+            this.currentSong.createNote();
         }
     },
     components: {
