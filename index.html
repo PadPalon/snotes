@@ -119,10 +119,9 @@
                     </thead>
                     <tbody>
                     <template>
-                        <note-row v-for="note in notes"
+                        <note-row v-for="note in currentSong.notes"
                                   :key="note.id"
-                                  :note="note"
-                        >
+                                  :note="note">
                         </note-row>
                     </template>
                     </tbody>
